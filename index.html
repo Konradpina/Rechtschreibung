@@ -138,6 +138,10 @@
                 background-color: black;
                 border: none;
             }
+            .voicetext{
+                height: 50%;
+                font-size: 50%;
+            }
         </style>
     </head>
     <body id="backgroundbody" class="background text body">
@@ -145,15 +149,24 @@
             <div class="flex1 settings settingselement">icons by <a target="_blank" href="https://icons8.com">Icons8</a></div>
             <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/3473/automatic">Automatic</a></div>
             <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/pnRC3_ditMfA/fill-color">Fill Color</a></div>
-            <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/19316/voice">Voice</a></div>
-
-            
+            <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/19316/voice">Voice</a></div>    
         </div>
-        <div id="hidebar" class="settingsbar flexbox">
-            <div class="flex1 settings settingselement">man</div>
+        <div id="hidebar" class="settingsbar flexbox clearfix">
+            <div class="flex1 settings settingselement">hide time</div>
+            <div class="flex1 settings settingselement">hide prozent</div>
         </div>
         <div id="voicebar" class="settingsbar flexbox">
-            <div class="flex1 settings settingselement">man</div>
+            <div class="flex1 settings settingselement voicecount" onclick="voicechange(0)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+            <div class="flex1 settings settingselement voicecount" onclick="voicechange(1)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+            <div class="flex1 settings settingselement voicecount" onclick="voicechange(2)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+            <div class="flex1 settings settingselement voicecount" onclick="voicechange(3)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+            <div class="flex1 settings settingselement voicecount" onclick="voicechange(4)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+            <div class="flex1 settings settingselement voicecount" onclick="voicechange(5)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+            <div class="flex1 settings settingselement voicecount" onclick="voicechange(6)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+            <div class="flex1 settings settingselement voicecount" onclick="voicechange(7)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+            <div class="flex1 settings settingselement voicecount" onclick="voicechange(8)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+            <div class="flex1 settings settingselement voicecount" onclick="voicechange(9)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+            <div class="flex1 settings settingselement voicecount" onclick="voicechange(10)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
         </div>
         <div id="Colorbar" class="settingsbar flexbox ">
             <div class="flex1 settings settingselement">Backgroundcolor <input id="bagroundcolorpicker" type="color" class="colorpicker"></div>
@@ -167,10 +180,11 @@
 
         </div>
         <div class="header flexbox">
-            <div class="flex1 headelement">Time</div>
-            <div class="flex1 headelement">Prozent</div>
+            <div class="flex1 headelement" id="timedisplay">Time</div>
+            <div class="flex1 headelement" id="prozentdisplay">Prozent</div>
             <div><button class="settings settingbutton" id="settingbutton"><img src="diktatpics/settingsgreen.png" alt=""></button></div>
         </div>
+        <div id="hidetime" class="hidetime">Time</div>
         <div id="inputbox" >
             <div class="headline">Welcome pleas enter your text:</div>
             <div><textarea class="background2 text textleft" id="textarea"></textarea></div>

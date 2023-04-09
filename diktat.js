@@ -1,4 +1,4 @@
-var inputtext=[]
+var inputtext=["Beispiel"]
 var thevoice=0
 var Version
 var diktatinput = document.getElementById("diktatinput")
@@ -11,7 +11,7 @@ function start(option){
     if(nothing===true){
         return
     }
-    var textin =document.getElementById("textarea").value.replace(/(\r\n|\n|\r)/gm, " ").replace("  "," ").replace("   "," ").replace("    "," ").split(" ")
+    var textin =document.getElementById("textarea").value.replace(/(\r\n|\n|\r)/gm, " ").split(" ")
     inputtext =removespace(textin);
     // splittext = split(option)
 
@@ -19,6 +19,7 @@ function start(option){
     document.getElementById("diktatbox").hidden=false
     Version = option
     readoutlout()
+    time("start")
 }
 
 // function split(option){
@@ -60,13 +61,16 @@ function checkword(){
             textdisplay= textdisplay+" "+inputtext[part]
             document.getElementById("textdisplay").innerText = textdisplay
             if(part+1=== inputtext.length){
+                time(stop)
                 document.getElementById("diktatinput").value="";
                 alert("the ende")
+                schowprozent(inputtext.length,inputtext.length)
                 return
             }
             part++
             document.getElementById("diktatinput").value="";
             readoutlout()
+            schowprozent(part,inputtext.length)
             return
         }else if(input.search(" ")!= -1){
             for(i=0;i<document.getElementById("diktatinput").value.split("").length;i++){
@@ -127,3 +131,51 @@ function hint(){
     document.getElementById("solution").innerText= wrongletters()
 }
 
+function schowprozent(atword, allword){
+    var prozent = Math.round(atword*100/(allword))
+    document.getElementById("prozentdisplay").innerText=prozent+"%"
+}
+
+
+function time(option){
+    if(option==="start"){
+         timedtime =setInterval(timer, 1000)    
+    }else if(option="stop"){
+        window.clearInterval(timedtime)
+    }
+}
+var seconds=0
+var minutes=0
+var houers=0
+function timer(){
+    seconds++
+    if(seconds===60){
+        seconds=0
+        minutes++
+    }
+    if(minutes===60){
+        minutes=0
+        houers++
+    }
+    
+    
+    document.getElementById("timedisplay").innerText=`${houers}:${minutes}:${seconds}`
+}
+
+function displayvoices(){
+    var voices =window.speechSynthesis.getVoices()
+    var languagedisplays =document.getElementsByClassName("voicelanguage")
+    var voicecount =document.getElementsByClassName("voicecount")
+    for(i=0;i< voices.length;i++){
+        languagedisplays[i].innerText=voices[i].name
+        voicecount[i].hidden=false
+
+    }
+} 
+displayvoices()
+
+function voicechange(option){
+    thevoice= option
+    readoutlout()
+
+}
