@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Diktat</title>
+        <style>
+            .background{
+                background-color: rgb(116, 102, 26);
+            }
+            .background2{
+                background-color:rgb(196, 197, 159);
+                transition: all 0.3s;
+            }
+            .background2:hover{
+                background-color:rgb(229, 229, 176);
+            }
+            .headercolor, .header, .settings{
+                background-color: rgb(175, 151, 15);
+                transition: all 0.5s;
+            }
+            .settings:hover{
+                background-color: rgb(204, 173, 0);
+            }
+            .text{
+                font-size: 40px;
+                color: rgb(2, 60, 8);
+                text-align: center;
+            }
+            .headline{
+                font-size: 100px;
+                margin-bottom: 40px;
+            }
+        
+            .flexbox{
+                display: flex;
+                flex-direction: row;
+            }
+            .flex1{
+                flex:1;
+            }
+            textarea{
+                border: black 2px solid;
+                border-radius: 5px;
+                text-align: left;
+                transition: all 0.4s;
+                margin-bottom: 5%;
+                margin-top: 5%;
+            }
+            .textleft, .textinput{
+                text-align:start;
+            }
+
+
+            .startbutton{
+                margin-top: 40px;
+                width: 75%;
+                transition: all 0.4s;
+                border:black 2px solid;
+                border-radius: 3px;
+            }
+            .startbutton:hover, .buttondiktat:hover{
+                width: 95%;
+                border-radius: 10px;
+                margin-bottom: 10px;
+            }
+            .headlinediktat{
+                font-size: 60px;
+                margin-bottom: 40px;
+                margin-top: 30px;
+            }
+            .textinput{
+                margin-top: 30px;
+                margin-bottom: 40px;
+
+                padding: 2%;
+            }
+            .buttondiktat{
+                border: black 2px solid;
+                border-radius: 3px;
+                width: 75%;
+                padding: 1%;
+                transition: all 0.5s;
+            }
+            .solution{
+                height: 40px;
+            }
+
+
+            .header{
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                right: 0px;
+                height: 5%;
+                
+               
+            }
+            .body{
+                margin-top: 7%;
+            }
+            .headelement{
+                position: relative;
+                top:10%;
+            }
+            .settingbutton{
+                height: 100%;
+                width: 150px;
+                text-align: center;
+                align-items: top;
+                border: rgb(2, 60, 8) solid 2px;
+                transition: all 0.4s;
+            }
+            .settingsbar{
+                position: fixed;
+                top: 0%;
+                left: 0px;
+                right: 0px;
+                height: 5%;
+                transition: all 0.5s;
+            }
+            .top5{
+                top:5%;
+            }
+            .top10{
+                top:10%;
+            }
+            .settingselement{
+                border: rgb(2, 60, 8) solid 2px;
+            }
+            .colorbar{
+                position: fixed;
+                top: 0%;
+                left: 0px;
+                right: 0px;
+                height: 5%;
+                transition: all 0.5s;
+            }
+        </style>
+    </head>
+    <body class="background text body">
+        <div id="creditsbar" class="settingsbar flexbox">
+            <div class="flex1 settings settingselement">icons by <a target="_blank" href="https://icons8.com">Icons8</a></div>
+            <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/3473/automatic">Automatic</a></div>
+            <div class="flex1 settings settingselement"><a target="_blank" href="">Fill Color</a></div>
+
+            
+        </div>
+        <div id="hidebar" class="settingsbar flexbox">
+            <div class="flex1 settings settingselement">man</div>
+        </div>
+        <div id="voicebar" class="settingsbar flexbox">
+            <div class="flex1 settings settingselement">man</div>
+        </div>
+        <div id="Colorbar" class="settingsbar flexbox">
+            <div class="flex1 settings settingselement">red</div>
+        </div>
+        <div id="settingsbar" class="settingsbar flexbox">
+            <div id="creditsbarbutton" class="flex1 settings settingselement">creditsbar</div>
+            <div id="colorbarbutton" class="flex1 settings settingselement"><img src="diktatpics/changecolor.png" alt=""></div>
+            <div id="voicebarbutton" class="flex1 settings settingselement">Halllo!</div>
+            <div id="hidebarbutton" class="flex1 settings settingselement">HALLLLLLLO!!!</div>
+
+        </div>
+        <div class="header flexbox">
+            <div class="flex1 headelement">Time</div>
+            <div class="flex1 headelement">Prozent</div>
+            <div><button class="settings settingbutton" id="settingbutton"><img src="diktatpics/settingsgreen.png" alt=""></button></div>
+        </div>
+        <div id="inputbox" >
+            <div class="headline">Welcome pleas enter your text:</div>
+            <div><textarea class="background2 text textleft" id="textarea"></textarea></div>
+            <div class="flexbox">
+                <div class="flex1"><button class="startbutton background2 text" onclick="start(1)">Start</button><div>Normaldiktat</div></div>
+                <div class="flex1"><button class="startbutton background2 text" onclick="start(2)">Start</button><div>Normaldiktat</div></div>
+            </div>
+        </div>
+        <div hidden id="diktatbox">
+            <div class="headlinediktat" id="textdisplay"></div>
+            <div id="solution" class="solution"></div>
+            <input id="diktatinput" onkeyup="checkword()" type="text" class="background2 text textinput">
+            <div class="flexbox">
+                <div class="flex1"><button class="background2 text buttondiktat" onclick="displaysolution() ">Solutuion</button></div>
+                <div class="flex1"><button class="background2 buttondiktat text" onclick="readoutlout()">Read again</button></div>
+                <div class="flex1"><button class="background2 buttondiktat text" onclick="hint()">Hint</button></div>
+            </div>
+        </div>
+    </body>
+    <script src="diktat.js"></script>
+    <script src="settings.js"></script>
+</html>
