@@ -9,6 +9,8 @@ var hidebar =document.getElementById("hidebar")
 var hidebarbutton = document.getElementById("hidebarbutton")
 var creditsbar =document.getElementById("creditsbar")
 var creditsbarbutton = document.getElementById("creditsbarbutton")
+var bagroundcolorpick = document.getElementById("bagroundcolorpicker")
+var fontcolorpick = document.getElementById("fontcolorpicker")
 
 
 
@@ -81,3 +83,19 @@ function creditsbardisapper(){
 }
 
 
+
+
+
+
+bagroundcolorpick.addEventListener("change", changebackground);
+fontcolorpick.addEventListener("change", changefontcolor);
+
+function changebackground(){
+    document.getElementById("backgroundbody").style.backgroundColor=document.getElementById("bagroundcolorpicker").value
+
+}
+function changefontcolor(){
+    console.log("now")
+    document.getElementById("backgroundbody").style.color=document.getElementById("fontcolorpicker").value
+}
+document.getElementById("bagroundcolorpicker").value="#74661a"

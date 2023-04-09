@@ -4,7 +4,7 @@
         <title>Diktat</title>
         <style>
             .background{
-                background-color: rgb(116, 102, 26);
+                background-color: #74661a;
             }
             .background2{
                 background-color:rgb(196, 197, 159);
@@ -134,13 +134,18 @@
                 height: 5%;
                 transition: all 0.5s;
             }
+            .colorpicker{
+                background-color: black;
+                border: none;
+            }
         </style>
     </head>
-    <body class="background text body">
+    <body id="backgroundbody" class="background text body">
         <div id="creditsbar" class="settingsbar flexbox">
             <div class="flex1 settings settingselement">icons by <a target="_blank" href="https://icons8.com">Icons8</a></div>
             <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/3473/automatic">Automatic</a></div>
-            <div class="flex1 settings settingselement"><a target="_blank" href="">Fill Color</a></div>
+            <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/pnRC3_ditMfA/fill-color">Fill Color</a></div>
+            <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/19316/voice">Voice</a></div>
 
             
         </div>
@@ -150,14 +155,15 @@
         <div id="voicebar" class="settingsbar flexbox">
             <div class="flex1 settings settingselement">man</div>
         </div>
-        <div id="Colorbar" class="settingsbar flexbox">
-            <div class="flex1 settings settingselement">red</div>
+        <div id="Colorbar" class="settingsbar flexbox ">
+            <div class="flex1 settings settingselement">Backgroundcolor <input id="bagroundcolorpicker" type="color" class="colorpicker"></div>
+            <div class="flex1 settings settingselement">Fontcolor <input id="fontcolorpicker" type="color" class="colorpicker"></div>
         </div>
         <div id="settingsbar" class="settingsbar flexbox">
             <div id="creditsbarbutton" class="flex1 settings settingselement">creditsbar</div>
             <div id="colorbarbutton" class="flex1 settings settingselement"><img src="diktatpics/changecolor.png" alt=""></div>
-            <div id="voicebarbutton" class="flex1 settings settingselement">Halllo!</div>
-            <div id="hidebarbutton" class="flex1 settings settingselement">HALLLLLLLO!!!</div>
+            <div id="voicebarbutton" class="flex1 settings settingselement"><img src="diktatpics/voice.png" alt=""> </div>
+            <div id="hidebarbutton" class="flex1 settings settingselement">visibilty</div>
 
         </div>
         <div class="header flexbox">
