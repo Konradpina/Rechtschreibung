@@ -53,6 +53,7 @@ creditsbar.addEventListener("mouseout",settingsdisapper)
 
 function settingsapper(){
     document.getElementById("settingsbar").classList.add("top5")
+    displayvoices()
 }
 function settingsdisapper(){
     document.getElementById("settingsbar").classList.remove("top5")
