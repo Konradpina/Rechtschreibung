@@ -170,27 +170,39 @@ function voicelist(Language){
     var voicecount =document.getElementsByClassName("voicecount")
     if(Language===1){
         Language="de-DE"
+        document.getElementById("voicebar").classList.add("animationvoice")
     }else if(Language===2){
         Language="en-US"
+        document.getElementById("voicebar").classList.add("animationvoice")
     }else if(Language===3){
         Language="es-ES"
+        document.getElementById("voicebar").classList.add("animationvoice")
+
     }
     var countvoices =0
-    for(i=0;i< voices.length;i++){
-        if(voices[i].lang==Language){
-            console.log(voices[i].name)
-            languagedisplays[i].innerText=voices[i].name
-            voicecount[i].hidden=false
-            countvoices++
+    setTimeout(changelang, 500)
+    function changelang(){
+        for(i=0;i< voices.length;i++){
+            if(voices[i].lang==Language){
+                console.log(voices[i].name)
+                languagedisplays[i].innerText=voices[i].name
+                voicecount[i].hidden=false
+                countvoices++
+            }else{
+                voicecount[i].hidden=true
+            }
+        }
+        if(countvoices===0){
+            document.getElementById("errorlanguage").hidden=false
         }else{
-            voicecount[i].hidden=true
+            document.getElementById("errorlanguage").hidden=true
         }
     }
-    if(countvoices===0){
-        document.getElementById("errorlanguage").hidden=false
-    }else{
-        document.getElementById("errorlanguage").hidden=true
+    setTimeout(removeanimaton, 1000)
+    function removeanimaton(){
+        document.getElementById("voicebar").classList.remove("animationvoice")
     }
+
 }
 
 function voicechange(option){
