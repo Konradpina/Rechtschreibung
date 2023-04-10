@@ -5,6 +5,7 @@ var diktatinput = document.getElementById("diktatinput")
 var part=0
 var wrongpoints=0
 var solution=""
+var voicelisting=[]
 
 function start(option){
     nothing= testfornothing()
@@ -179,15 +180,24 @@ function voicelist(Language){
         document.getElementById("voicebar").classList.add("animationvoice")
 
     }
+    
     var countvoices =0
+    var x =0
+    for(i=0; i<11;i++){
+        voicelisting.shift()
+    }
     setTimeout(changelang, 500)
     function changelang(){
         for(i=0;i< voices.length;i++){
             if(voices[i].lang==Language){
-                console.log(voices[i].name)
-                languagedisplays[i].innerText=voices[i].name
-                voicecount[i].hidden=false
+                voicelisting.push(i)
+                languagedisplays[x].innerText=voices[i].name
+                voicecount[x].hidden=false
+                x++
                 countvoices++
+                if(x===10){
+                    return
+                }
             }else{
                 voicecount[i].hidden=true
             }
@@ -206,7 +216,7 @@ function voicelist(Language){
 }
 
 function voicechange(option){
-    thevoice= option
+    thevoice= voicelisting[option]
     readoutlout()
 
 }
