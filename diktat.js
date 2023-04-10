@@ -186,6 +186,16 @@ function voicelist(Language){
         Language="es-ES"
         document.getElementById("voicebar").classList.add("animationvoice")
         voicelisting=[];
+    }else if(Language===4){
+        exampel="exampel"
+        Language="en-GB"
+        document.getElementById("voicebar").classList.add("animationvoice")
+        voicelisting=[];
+    }else if(Language===5){
+        exampel="exemple"
+        Language="fr-FR"
+        document.getElementById("voicebar").classList.add("animationvoice")
+        voicelisting=[];
     }
     var countvoices =0
     var x =0

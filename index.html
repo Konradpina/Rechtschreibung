@@ -158,15 +158,23 @@
                 50%{top: 10%;}
                 100%{top: 15%;}                
             }
+            .icondisplay{
+                justify-content: center;
+            }
         </style>
     </head>
     <body id="backgroundbody" class="background text body">
         <div id="creditsbar" class="settingsbar flexbox">
             <div class="flex1 settings settingselement">icons by <a target="_blank" href="https://icons8.com">Icons8</a></div>
             <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/3473/automatic">Automatic</a></div>
-            <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/pnRC3_ditMfA/fill-color">Fill Color</a></div>
+            <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/pnRC3_ditMfA/fill-color">Color</a></div>
             <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/19316/voice">Voice</a></div>    
-            <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/OyqucOGoByl9/germany">Germany</a></div>    
+            <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/15502/germany">Germany</a></div>
+            <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/18099/spain-flag">Spain</a></div>
+            <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/15534/great-britain">UK</a></div>
+            <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/15532/usa">US</a></div>
+            <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/pzp5DPl1IvyP/france">France</a></div>
+
         </div>
         <div id="hidebar" class="settingsbar flexbox clearfix">
             <div class="flex1 settings settingselement">hide time</div>
@@ -191,9 +199,11 @@
             
         </div>
         <div id="languagebar" class="settingsbar flexbox">
-            <div class="flex1 settings settingselement" onmouseover="voicelist(1)">German <img src="./diktatpics/german.png" alt=""></div>
-            <div class="flex1 settings settingselement" onmouseover="voicelist(2)">Englisch</div>
-            <div class="flex1 settings settingselement" onmouseover="voicelist(3)">Español</div>
+            <div class="flex1 settings settingselement" onmouseover="voicelist(1)"><div class="flexbox icondisplay"><div >German</div><div ><img src="./diktatpics/german.png" alt=""></div></div></div>
+            <div class="flex1 settings settingselement" onmouseover="voicelist(2)"><div class="flexbox icondisplay"><div >Englisch</div><div ><img src="./diktatpics/USA.png" alt=""></div></div></div>
+            <div class="flex1 settings settingselement" onmouseover="voicelist(3)"><div class="flexbox icondisplay"><div >Español</div><div ><img src="./diktatpics/spain.png" alt=""></div></div></div>
+            <div class="flex1 settings settingselement" onmouseover="voicelist(4)"><div class="flexbox icondisplay"><div >Englisch</div><div ><img src="./diktatpics/UK.png" alt=""></div></div></div>
+            <div class="flex1 settings settingselement" onmouseover="voicelist(5)"><div class="flexbox icondisplay"><div >France</div><div ><img src="./diktatpics/France.png" alt=""></div></div></div>
         </div>
         <div id="Colorbar" class="settingsbar flexbox ">
             <div class="flex1 settings settingselement">Backgroundcolor <input id="bagroundcolorpicker" type="color" class="colorpicker"></div>
