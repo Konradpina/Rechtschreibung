@@ -162,17 +162,36 @@ function timer(){
     document.getElementById("timedisplay").innerText=`${houers}:${minutes}:${seconds}`
 }
 
-function displayvoices(){
+
+
+function voicelist(Language){
     var voices =window.speechSynthesis.getVoices()
     var languagedisplays =document.getElementsByClassName("voicelanguage")
     var voicecount =document.getElementsByClassName("voicecount")
-    for(i=0;i< voices.length;i++){
-        languagedisplays[i].innerText=voices[i].name
-        voicecount[i].hidden=false
-
+    if(Language===1){
+        Language="de-DE"
+    }else if(Language===2){
+        Language="en-US"
+    }else if(Language===3){
+        Language="es-ES"
     }
-} 
-displayvoices()
+    var countvoices =0
+    for(i=0;i< voices.length;i++){
+        if(voices[i].lang==Language){
+            console.log(voices[i].name)
+            languagedisplays[i].innerText=voices[i].name
+            voicecount[i].hidden=false
+            countvoices++
+        }else{
+            voicecount[i].hidden=true
+        }
+    }
+    if(countvoices===0){
+        document.getElementById("errorlanguage").hidden=false
+    }else{
+        document.getElementById("errorlanguage").hidden=true
+    }
+}
 
 function voicechange(option){
     thevoice= option

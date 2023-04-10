@@ -21,6 +21,7 @@
                 background-color: rgb(204, 173, 0);
             }
             .text{
+            
                 font-size: 40px;
                 color: rgb(2, 60, 8);
                 text-align: center;
@@ -91,7 +92,7 @@
                 left: 0px;
                 right: 0px;
                 height: 5%;
-                
+                min-height: 50px;
                
             }
             .body{
@@ -122,6 +123,9 @@
             }
             .top10{
                 top:10%;
+            }
+            .top15{
+                top:15%
             }
             .settingselement{
                 border: rgb(2, 60, 8) solid 2px;
@@ -167,6 +171,13 @@
             <div class="flex1 settings settingselement voicecount" onclick="voicechange(8)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
             <div class="flex1 settings settingselement voicecount" onclick="voicechange(9)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
             <div class="flex1 settings settingselement voicecount" onclick="voicechange(10)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+            <div class="flex1 settings settingselement" id="errorlanguage" hidden><div class=" voicelanguage">We are sorry. Your Browser dosent suport this Language</div></div>
+            
+        </div>
+        <div id="languagebar" class="settingsbar flexbox">
+            <div class="flex1 settings settingselement" onmouseover="voicelist(1)">German</div>
+            <div class="flex1 settings settingselement" onmouseover="voicelist(2)">Englisch</div>
+            <div class="flex1 settings settingselement" onmouseover="voicelist(3)">Español</div>
         </div>
         <div id="Colorbar" class="settingsbar flexbox ">
             <div class="flex1 settings settingselement">Backgroundcolor <input id="bagroundcolorpicker" type="color" class="colorpicker"></div>
