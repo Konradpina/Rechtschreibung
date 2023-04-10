@@ -198,8 +198,6 @@ function voicelist(Language){
                 if(x===10){
                     return
                 }
-            }else{
-                voicecount[i].hidden=true
             }
         }
         if(countvoices===0){
