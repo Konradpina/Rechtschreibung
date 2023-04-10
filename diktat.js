@@ -1,4 +1,4 @@
-var inputtext=["Beispiel"]
+var inputtext=[]
 var thevoice=0
 var Version
 var diktatinput = document.getElementById("diktatinput")
@@ -6,6 +6,7 @@ var part=0
 var wrongpoints=0
 var solution=""
 var voicelisting=[]
+var exampel="Exampel"
 
 function start(option){
     nothing= testfornothing()
@@ -166,21 +167,26 @@ function timer(){
 
 
 function voicelist(Language){
+    voicelisting=[];
     var voices =window.speechSynthesis.getVoices()
     var languagedisplays =document.getElementsByClassName("voicelanguage")
     var voicecount =document.getElementsByClassName("voicecount")
     if(Language===1){
         Language="de-DE"
         document.getElementById("voicebar").classList.add("animationvoice")
+        exampel="Beispiel"
+        voicelisting=[];
     }else if(Language===2){
         Language="en-US"
         document.getElementById("voicebar").classList.add("animationvoice")
+        exampel="Exampel"
+        voicelisting=[];
     }else if(Language===3){
+        exampel="ejemplo"
         Language="es-ES"
         document.getElementById("voicebar").classList.add("animationvoice")
-
+        voicelisting=[];
     }
-    
     var countvoices =0
     var x =0
     for(i=0; i<11;i++){
@@ -188,6 +194,9 @@ function voicelist(Language){
     }
     setTimeout(changelang, 500)
     function changelang(){
+        for(i=0;i<voicecount.length;i++){
+            voicecount[i].hidden=true
+        }
         for(i=0;i< voices.length;i++){
             if(voices[i].lang==Language){
                 voicelisting.push(i)
@@ -215,6 +224,15 @@ function voicelist(Language){
 
 function voicechange(option){
     thevoice= voicelisting[option]
-    readoutlout()
+    readexampel(exampel)
 
+}
+
+function readexampel(){
+
+    var msg = new SpeechSynthesisUtterance();
+    var voices = window.speechSynthesis.getVoices();
+    msg.voice = voices[thevoice];
+    msg.text = exampel
+    speechSynthesis.speak(msg);
 }
