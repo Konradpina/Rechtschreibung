@@ -65,7 +65,7 @@ function checkword(){
             if(part+1=== inputtext.length){
                 time(stop)
                 document.getElementById("diktatinput").value="";
-                alert("the ende")
+                alert("the ende "+wrongpoints+" Mistakes. there were "+inputtext.length+" Words")
                 schowprozent(inputtext.length,inputtext.length)
                 return
             }

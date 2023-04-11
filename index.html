@@ -13,7 +13,7 @@
             .background2:hover{
                 background-color:rgb(229, 229, 176);
             }
-            .headercolor, .header, .settings{
+            .headercolor, .settings{
                 background-color: rgb(175, 151, 15);
                 transition: all 0.5s;
             }
@@ -91,8 +91,7 @@
                 top: 0px;
                 left: 0px;
                 right: 0px;
-                height: 5%;
-                min-height: 50px;
+                max-height: 100%;
                
             }
             .body{
@@ -110,27 +109,19 @@
                 border: rgb(2, 60, 8) solid 2px;
                 transition: all 0.4s;
             }
-            .settingsbar{
+            /* .rve{
                 position: fixed;
                 top: 0%;
                 left: 0px;
                 right: 0px;
-                height: 5%;
+                min-height: 5%;
                 transition: all 0.5s;
                 opacity: 0%;
+            } */
+            .height5{
+                height: 5%;
             }
-            .top5{
-                top:5%;
-                opacity: 100%;
-            }
-            .top10{
-                top:10%;
-                opacity: 100%;
-            }
-            .top15{
-                top:15%;
-                opacity: 100%;
-            }
+            
             .settingselement{
                 border: rgb(2, 60, 8) solid 2px;
             }
@@ -150,78 +141,131 @@
                 height: 50%;
                 font-size: 50%;
             }
-            .animationvoice{
+            /* .animationvoice{
                 animation: changevoice 1s forwards;
             }
             @keyframes changevoice {
-                0%{top: 15%;}
-                50%{top: 10%;}
-                100%{top: 15%;}                
-            }
+                0%{left: 0%;}
+                50%{left: 120%;}
+                100%{left: 0%;}                
+            } */
             .icondisplay{
                 justify-content: center;
+            }
+            .icons{
+            max-height: 50px;
+            
+            }
+
+            .relative{
+               position: relative;
+               top: 0;
+               left: 100%;
+               right: 0%; 
+               transition: all 0.5s;
+               height: 0;
+               
+            }
+            .relativeschow{
+                left: 0%;
+                transition: all 0.5s;
+                background-color: aliceblue;
+                height: 100%;
+            }
+            @keyframes load {
+                0%{
+                }
+                30%{
+                    background-color: rgb(128, 174, 12);
+                }
+                99%{
+                    
+                }
+                
+                
+            }
+            .load:hover{
+                
+                animation: load 2s  forwards;
+            }
+            .click{
+                cursor:pointer;
             }
         </style>
     </head>
     <body id="backgroundbody" class="background text body">
-        <div id="creditsbar" class="settingsbar flexbox">
-            <div class="flex1 settings settingselement">icons by <a target="_blank" href="https://icons8.com">Icons8</a></div>
-            <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/3473/automatic">Automatic</a></div>
-            <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/pnRC3_ditMfA/fill-color">Color</a></div>
-            <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/19316/voice">Voice</a></div>    
-            <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/15502/germany">Germany</a></div>
-            <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/18099/spain-flag">Spain</a></div>
-            <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/15534/great-britain">UK</a></div>
-            <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/15532/usa">US</a></div>
-            <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/pzp5DPl1IvyP/france">France</a></div>
-
-        </div>
-        <div id="hidebar" class="settingsbar flexbox clearfix">
-            <div class="flex1 settings settingselement">hide time</div>
-            <div class="flex1 settings settingselement">hide prozent</div>
-        </div>
-        <div id="voicebar" class="settingsbar flexbox">
-            <div class="flex1 settings settingselement voicecount" onclick="voicechange(0)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
-            <div class="flex1 settings settingselement voicecount" onclick="voicechange(1)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
-            <div class="flex1 settings settingselement voicecount" onclick="voicechange(2)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
-            <div class="flex1 settings settingselement voicecount" onclick="voicechange(3)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
-            <div class="flex1 settings settingselement voicecount" onclick="voicechange(4)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
-            <div class="flex1 settings settingselement voicecount" onclick="voicechange(5)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
-            <div class="flex1 settings settingselement voicecount" onclick="voicechange(6)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
-            <div class="flex1 settings settingselement voicecount" onclick="voicechange(7)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
-            <div class="flex1 settings settingselement voicecount" onclick="voicechange(8)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
-            <div class="flex1 settings settingselement voicecount" onclick="voicechange(9)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
-            <div class="flex1 settings settingselement voicecount" onclick="voicechange(10)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
-            <div class="flex1 settings settingselement voicecount" onclick="voicechange(11)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+        
+        
+        
+        
+        
+       
 
 
-            <div class="flex1 settings settingselement" id="errorlanguage" hidden><div class=" voicelanguage">We are sorry. Your Browser dosent suport this Language</div></div>
-            
-        </div>
-        <div id="languagebar" class="settingsbar flexbox">
-            <div class="flex1 settings settingselement" onmouseover="voicelist(1)"><div class="flexbox icondisplay"><div >German</div><div ><img src="./diktatpics/german.png" alt=""></div></div></div>
-            <div class="flex1 settings settingselement" onmouseover="voicelist(2)"><div class="flexbox icondisplay"><div >Englisch</div><div ><img src="./diktatpics/USA.png" alt=""></div></div></div>
-            <div class="flex1 settings settingselement" onmouseover="voicelist(3)"><div class="flexbox icondisplay"><div >Español</div><div ><img src="./diktatpics/spain.png" alt=""></div></div></div>
-            <div class="flex1 settings settingselement" onmouseover="voicelist(4)"><div class="flexbox icondisplay"><div >Englisch</div><div ><img src="./diktatpics/UK.png" alt=""></div></div></div>
-            <div class="flex1 settings settingselement" onmouseover="voicelist(5)"><div class="flexbox icondisplay"><div >France</div><div ><img src="./diktatpics/France.png" alt=""></div></div></div>
-        </div>
-        <div id="Colorbar" class="settingsbar flexbox ">
-            <div class="flex1 settings settingselement">Backgroundcolor <input id="bagroundcolorpicker" type="color" class="colorpicker"></div>
-            <div class="flex1 settings settingselement">Fontcolor <input id="fontcolorpicker" type="color" class="colorpicker"></div>
-        </div>
-        <div id="settingsbar" class="settingsbar flexbox">
-            <div id="creditsbarbutton" class="flex1 settings settingselement">creditsbar</div>
-            <div id="colorbarbutton" class="flex1 settings settingselement"><img src="diktatpics/changecolor.png" alt=""></div>
-            <div id="voicebarbutton" class="flex1 settings settingselement"><img src="diktatpics/voice.png" alt=""> </div>
-            <div id="hidebarbutton" class="flex1 settings settingselement">visibilty</div>
+        <div class="header">
+                <div class="realtive settings flexbox">
+                <div class="flex1 headelement" id="timedisplay">Time</div>
+                <div class="flex1 headelement" id="prozentdisplay">Prozent</div>
+                <div><button class="settings settingbutton click" id="settingbutton"><img src="diktatpics/settingsgreen.png" alt=""></button></div>
+            </div>
+            <div id="settingsbar" class="relative flexbox">
+                <div id="creditsbarbutton" class="flex1 settings settingselement load">creditsbar</div>
+                <div id="colorbarbutton" class="flex1 settings settingselement load"><img src="diktatpics/changecolor.png" alt=""></div>
+                <div id="voicebarbutton" class="flex1 settings settingselement load"><img src="diktatpics/voice.png" alt=""> </div>
+                <div id="hidebarbutton" class="flex1 settings settingselement load">visibilty</div>
 
+            </div>
+            <div id="languagebar" class="relative height5 flexbox">
+                <div class="flex1 settings settingselement click" onmouseover="voicelist(1)"><div class="flexbox icondisplay"><div >German</div><div ><img class="icons" src="./diktatpics/german.png" alt=""></div></div></div>
+                <div class="flex1 settings settingselement click" onmouseover="voicelist(2)"><div class="flexbox icondisplay"><div >Englisch</div><div ><img class="icons" src="./diktatpics/USA.png" alt=""></div></div></div>
+                <div class="flex1 settings settingselement click" onmouseover="voicelist(3)"><div class="flexbox icondisplay"><div >Español</div><div ><img class="icons" src="./diktatpics/spain.png" alt=""></div></div></div>
+                <div class="flex1 settings settingselement click" onmouseover="voicelist(4)"><div class="flexbox icondisplay"><div >Englisch</div><div ><img class="icons" src="./diktatpics/UK.png" alt=""></div></div></div>
+                <div class="flex1 settings settingselement click" onmouseover="voicelist(5)"><div class="flexbox icondisplay"><div >France</div><div ><img class="icons" src="./diktatpics/France.png" alt=""></div></div></div>
+            </div>
+            <div id="Colorbar" class="relative height5 flexbox ">
+                <div class="flex1 settings settingselement"><label for="bagroundcolorpicker">Backgroundcolor</label><input id="bagroundcolorpicker" name="backgroundcolor" type="color" class="colorpicker  click"></div>
+                <div class="flex1 settings settingselement"><label for="fontcolorpicker">Font color</label><input id="fontcolorpicker" type="color" class="colorpicker  click"></div>
+            </div>
+            <div id="hidebar" class="relative flexbox">
+                <div class="flex1 settings settingselement">hide time</div>
+                <div class="flex1 settings settingselement">hide prozent</div>
+            </div>
+            <div id="creditsbar" class="relative flexbox">
+                <div class="flex1 settings settingselement">icons by <a target="_blank" href="https://icons8.com">Icons8</a></div>
+                <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/3473/automatic">Automatic</a></div>
+                <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/pnRC3_ditMfA/fill-color">Color</a></div>
+                <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/19316/voice">Voice</a></div>    
+                <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/15502/germany">Germany</a></div>
+                <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/18099/spain-flag">Spain</a></div>
+                <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/15534/great-britain">UK</a></div>
+                <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/15532/usa">US</a></div>
+                <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/pzp5DPl1IvyP/france">France</a></div>
+
+            </div>
+            <div id="voicebar" class="relative flexbox">
+                <div class="flex1 settings settingselement voicecount" onclick="voicechange(0)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+                <div class="flex1 settings settingselement voicecount" onclick="voicechange(1)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+                <div class="flex1 settings settingselement voicecount" onclick="voicechange(2)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+                <div class="flex1 settings settingselement voicecount" onclick="voicechange(3)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+                <div class="flex1 settings settingselement voicecount" onclick="voicechange(4)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+                <div class="flex1 settings settingselement voicecount" onclick="voicechange(5)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+                <div class="flex1 settings settingselement voicecount" onclick="voicechange(6)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+                <div class="flex1 settings settingselement voicecount" onclick="voicechange(7)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+                <div class="flex1 settings settingselement voicecount" onclick="voicechange(8)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+                <div class="flex1 settings settingselement voicecount" onclick="voicechange(9)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+                <div class="flex1 settings settingselement voicecount" onclick="voicechange(10)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+                <div class="flex1 settings settingselement voicecount" onclick="voicechange(11)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+
+
+                <div class="flex1 settings settingselement" id="errorlanguage" hidden><div class=" voicelanguage">We are sorry. Your Browser dosent suport this Language</div></div>
+                
+            </div>
         </div>
-        <div class="header flexbox">
-            <div class="flex1 headelement" id="timedisplay">Time</div>
-            <div class="flex1 headelement" id="prozentdisplay">Prozent</div>
-            <div><button class="settings settingbutton" id="settingbutton"><img src="diktatpics/settingsgreen.png" alt=""></button></div>
-        </div>
-        <div id="hidetime" class="hidetime">Time</div>
+        
+
+
+
+
         <div id="inputbox" >
             <div class="headline">Welcome pleas enter your text:</div>
             <div><textarea class="background2 text textleft" id="textarea"></textarea></div>
