@@ -1,0 +1,107 @@
+.ct{
+    display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-top: 1vh;
+}
+
+
+.flexbox{
+    display: flex;
+    justify-content: center;
+}
+.diktatbox{
+    /* display: flex; */
+    margin-top: 20px;
+    font-size: 40px;
+    align-content: center;
+}
+.text{
+    /* padding: 0;
+    display: block; */
+    background-color: antiquewhite;
+}
+.textinput{
+    border: 0px;
+    /* display: block; */
+    height: 40px;
+    font-size: 40px;
+    outline: none;
+    background-color: rgb(0, 4, 255);
+    
+    width: 200px;
+    max-width: 100vw;
+
+}
+.text, .textinput,.textdisplay{
+    font-family: 'Gloria Hallelujah', cursive;
+    background-color: rgba(187, 187, 187, 0);
+}
+.textinput:focus{
+    border: 0px;
+
+}
+.textdisplay{
+    display:inline;
+
+
+}
+
+
+
+.inputbox{
+    /* border: var(--hcolor) solid 2px; */
+    border-radius: 1px;
+    position: absolute;
+    top:25vh;
+    height: 50vh;
+    width: 70vw;
+    left: 15vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 4px 4px 40px gray;
+}
+.inputbox button{
+    background-color:var(--hcolor);
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    border: 2px solid rgba(0, 128, 0, 0);
+    border-radius: 10px;
+    padding: 3% 8%;
+    transition: all 0.3s;
+    box-shadow: 0;
+}
+.inputbox button:hover{
+    border: 2px solid var(--hcolor);
+    background-color: rgb(40, 128, 10);
+    padding: 3% 12%;
+    /* box-shadow: 10px 5px 10px rgb(31, 30, 30); */
+    /* color:var(--hcolor) */
+}
+.inputbox textarea{
+    width: 40vw;
+    border: 2px solid var(--hcolor);
+    
+}
+@media only screen and (min-width:1500px){
+    .inputbox{
+        width: 50vw;
+        left: 25vw;
+    }
+    .inputbox textarea{
+        width: 30vw;
+    }
+    
+}
+@media only screen and (min-width:2000px){
+    .inputbox{
+        width: 30vw;
+        left: 35vw;
+    }
+    .inputbox textarea{
+        width: 20vw;
+    }
+ 
+}

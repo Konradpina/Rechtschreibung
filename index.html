@@ -1,290 +1,69 @@
-<!DOCTYPE html>
 <html>
     <head>
         <title>Diktat</title>
-        <style>
-            .background{
-                background-color: #74661a;
-            }
-            .background2{
-                background-color:rgb(196, 197, 159);
-                transition: all 0.3s;
-            }
-            .background2:hover{
-                background-color:rgb(229, 229, 176);
-            }
-            .headercolor, .settings{
-                background-color: rgb(175, 151, 15);
-                transition: all 0.5s;
-            }
-            .settings:hover{
-                background-color: rgb(204, 173, 0);
-            }
-            .text{
-            
-                font-size: 40px;
-                color: rgb(2, 60, 8);
-                text-align: center;
-            }
-            .headline{
-                font-size: 100px;
-                margin-bottom: 40px;
-            }
-        
-            .flexbox{
-                display: flex;
-                flex-direction: row;
-            }
-            .flex1{
-                flex:1;
-            }
-            textarea{
-                border: black 2px solid;
-                border-radius: 5px;
-                text-align: left;
-                transition: all 0.4s;
-                margin-bottom: 5%;
-                margin-top: 5%;
-            }
-            .textleft, .textinput{
-                text-align:start;
-            }
+        <link rel="stylesheet" href="style/Header.css">
+        <link rel="stylesheet" href="style/Input.css">
 
-
-            .startbutton{
-                margin-top: 40px;
-                width: 75%;
-                transition: all 0.4s;
-                border:black 2px solid;
-                border-radius: 3px;
-            }
-            .startbutton:hover, .buttondiktat:hover{
-                width: 95%;
-                border-radius: 10px;
-                margin-bottom: 10px;
-            }
-            .headlinediktat{
-                font-size: 60px;
-                margin-bottom: 40px;
-                margin-top: 30px;
-            }
-            .textinput{
-                margin-top: 30px;
-                margin-bottom: 40px;
-
-                padding: 2%;
-            }
-            .buttondiktat{
-                border: black 2px solid;
-                border-radius: 3px;
-                width: 75%;
-                padding: 1%;
-                transition: all 0.5s;
-            }
-            .solution{
-                height: 40px;
-            }
-
-
-            .header{
-                position: fixed;
-                top: 0px;
-                left: 0px;
-                right: 0px;
-                max-height: 100%;
-               
-            }
-            .body{
-                margin-top: 7%;
-            }
-            .headelement{
-                position: relative;
-                top:10%;
-            }
-            .settingbutton{
-                height: 100%;
-                width: 150px;
-                text-align: center;
-                align-items: top;
-                border: rgb(2, 60, 8) solid 2px;
-                transition: all 0.4s;
-            }
-            /* .rve{
-                position: fixed;
-                top: 0%;
-                left: 0px;
-                right: 0px;
-                min-height: 5%;
-                transition: all 0.5s;
-                opacity: 0%;
-            } */
-            .height5{
-                height: 5%;
-            }
-            
-            .settingselement{
-                border: rgb(2, 60, 8) solid 2px;
-            }
-            .colorbar{
-                position: fixed;
-                top: 0%;
-                left: 0px;
-                right: 0px;
-                height: 5%;
-                transition: all 0.5s;
-            }
-            .colorpicker{
-                background-color: black;
-                border: none;
-            }
-            .voicetext{
-                height: 50%;
-                font-size: 50%;
-            }
-            /* .animationvoice{
-                animation: changevoice 1s forwards;
-            }
-            @keyframes changevoice {
-                0%{left: 0%;}
-                50%{left: 120%;}
-                100%{left: 0%;}                
-            } */
-            .icondisplay{
-                justify-content: center;
-            }
-            .icons{
-            max-height: 50px;
-            
-            }
-
-            .relative{
-               position: relative;
-               top: 0;
-               left: 100%;
-               right: 0%; 
-               transition: all 0.5s;
-               height: 0;
-               
-            }
-            .relativeschow{
-                left: 0%;
-                transition: all 0.5s;
-                background-color: aliceblue;
-                height: 100%;
-            }
-            @keyframes load {
-                0%{
-                }
-                30%{
-                    background-color: rgb(128, 174, 12);
-                }
-                99%{
-                    
-                }
-                
-                
-            }
-            .load:hover{
-                
-                animation: load 2s  forwards;
-            }
-            .click{
-                cursor:pointer;
-            }
-        </style>
+        <!-- font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet"> 
     </head>
-    <body id="backgroundbody" class="background text body">
-        
-        
-        
-        
-        
-       
+    <body>
+        <header >
+            <div class="logo">Diktat.de</div>
+            <div id="timedisplay" class="headertool">Time</div>
+            <div id="solution" class="headertool" hidden></div>
+            <div id="prozentdisplay" class="headertool">Time</div>
+            <div class="more">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li>
+                        <a href="" class="active">Diktat</a>
+                    </li>
+                    <li>
+                        <a  onclick="displaysolution()">Lösung</a>
+                    </li>
+                    <li>
+                        <a href="language.html">Sprache</a>
+                    </li>
+                    <li>
+                        <a onclick="hint()">Hineweis</a>
+                    </li>
+                    <li>
+                        <a href="imp.html">Impressum</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
 
-        <div class="header">
-                <div class="realtive settings flexbox">
-                <div class="flex1 headelement" id="timedisplay">Time</div>
-                <div class="flex1 headelement" id="prozentdisplay">Prozent</div>
-                <div><button class="settings settingbutton click" id="settingbutton"><img src="diktatpics/settingsgreen.png" alt=""></button></div>
-            </div>
-            <div id="settingsbar" class="relative flexbox">
-                <div id="creditsbarbutton" class="flex1 settings settingselement load">creditsbar</div>
-                <div id="colorbarbutton" class="flex1 settings settingselement load"><img src="diktatpics/changecolor.png" alt=""></div>
-                <div id="voicebarbutton" class="flex1 settings settingselement load"><img src="diktatpics/voice.png" alt=""> </div>
-                <div id="hidebarbutton" class="flex1 settings settingselement load">visibilty</div>
-
-            </div>
-            <div id="languagebar" class="relative height5 flexbox">
-                <div class="flex1 settings settingselement click" onmouseover="voicelist(1)"><div class="flexbox icondisplay"><div >German</div><div ><img class="icons" src="./diktatpics/german.png" alt=""></div></div></div>
-                <div class="flex1 settings settingselement click" onmouseover="voicelist(2)"><div class="flexbox icondisplay"><div >Englisch</div><div ><img class="icons" src="./diktatpics/USA.png" alt=""></div></div></div>
-                <div class="flex1 settings settingselement click" onmouseover="voicelist(3)"><div class="flexbox icondisplay"><div >Español</div><div ><img class="icons" src="./diktatpics/spain.png" alt=""></div></div></div>
-                <div class="flex1 settings settingselement click" onmouseover="voicelist(4)"><div class="flexbox icondisplay"><div >Englisch</div><div ><img class="icons" src="./diktatpics/UK.png" alt=""></div></div></div>
-                <div class="flex1 settings settingselement click" onmouseover="voicelist(5)"><div class="flexbox icondisplay"><div >France</div><div ><img class="icons" src="./diktatpics/France.png" alt=""></div></div></div>
-            </div>
-            <div id="Colorbar" class="relative height5 flexbox ">
-                <div class="flex1 settings settingselement"><label for="bagroundcolorpicker">Backgroundcolor</label><input id="bagroundcolorpicker" name="backgroundcolor" type="color" class="colorpicker  click"></div>
-                <div class="flex1 settings settingselement"><label for="fontcolorpicker">Font color</label><input id="fontcolorpicker" type="color" class="colorpicker  click"></div>
-            </div>
-            <div id="hidebar" class="relative flexbox">
-                <div class="flex1 settings settingselement">hide time</div>
-                <div class="flex1 settings settingselement">hide prozent</div>
-            </div>
-            <div id="creditsbar" class="relative flexbox">
-                <div class="flex1 settings settingselement">icons by <a target="_blank" href="https://icons8.com">Icons8</a></div>
-                <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/3473/automatic">Automatic</a></div>
-                <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/pnRC3_ditMfA/fill-color">Color</a></div>
-                <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/19316/voice">Voice</a></div>    
-                <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/15502/germany">Germany</a></div>
-                <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/18099/spain-flag">Spain</a></div>
-                <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/15534/great-britain">UK</a></div>
-                <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/15532/usa">US</a></div>
-                <div class="flex1 settings settingselement"><a target="_blank" href="https://icons8.com/icon/pzp5DPl1IvyP/france">France</a></div>
-
-            </div>
-            <div id="voicebar" class="relative flexbox">
-                <div class="flex1 settings settingselement voicecount" onclick="voicechange(0)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
-                <div class="flex1 settings settingselement voicecount" onclick="voicechange(1)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
-                <div class="flex1 settings settingselement voicecount" onclick="voicechange(2)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
-                <div class="flex1 settings settingselement voicecount" onclick="voicechange(3)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
-                <div class="flex1 settings settingselement voicecount" onclick="voicechange(4)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
-                <div class="flex1 settings settingselement voicecount" onclick="voicechange(5)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
-                <div class="flex1 settings settingselement voicecount" onclick="voicechange(6)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
-                <div class="flex1 settings settingselement voicecount" onclick="voicechange(7)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
-                <div class="flex1 settings settingselement voicecount" onclick="voicechange(8)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
-                <div class="flex1 settings settingselement voicecount" onclick="voicechange(9)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
-                <div class="flex1 settings settingselement voicecount" onclick="voicechange(10)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
-                <div class="flex1 settings settingselement voicecount" onclick="voicechange(11)" hidden><div class="voicetext voicelanguage">Englisch</div></div>
+         <div  id="inputbox" >
+          
 
 
-                <div class="flex1 settings settingselement" id="errorlanguage" hidden><div class=" voicelanguage">We are sorry. Your Browser dosent suport this Language</div></div>
+            <div class="Inputbox" > 
                 
+                <div class="Input"><textarea name="" id="textarea" cols="30" rows="10"></textarea>
+                <div class="ct">Enter your Text</div>
+                <div class="ct"> <button  onclick="start(1)">Start</button></div>
+                
+                </div>
             </div>
-        </div>
+         </div>
         
 
-
-
-
-        <div id="inputbox" >
-            <div class="headline">Welcome pleas enter your text:</div>
-            <div><textarea class="background2 text textleft" id="textarea"></textarea></div>
-            <div class="flexbox">
-                <div class="flex1"><button class="startbutton background2 text" onclick="start(1)">Start</button><div>Normaldiktat</div></div>
-                <div class="flex1"><button class="startbutton background2 text" onclick="start(2)">Start</button><div>Normaldiktat</div></div>
-            </div>
+        <div class="diktatbox" id="diktatbox" hidden>
+            <div class="text" ><div class="textdisplay" id="textdisplay"></div><input type="text" class="textinput" id="diktatinput" onkeyup="checkword()"></div>
+           
         </div>
-        <div hidden id="diktatbox">
-            <div class="headlinediktat" id="textdisplay"></div>
-            <div id="solution" class="solution"></div>
-            <input id="diktatinput" onkeyup="checkword()" type="text" class="background2 text textinput">
-            <div class="flexbox">
-                <div class="flex1"><button class="background2 text buttondiktat" onclick="displaysolution() ">Solutuion</button></div>
-                <div class="flex1"><button class="background2 buttondiktat text" onclick="readoutlout()">Read again</button></div>
-                <div class="flex1"><button class="background2 buttondiktat text" onclick="hint()">Hint</button></div>
-            </div>
-        </div>
+        
+        
     </body>
-    <script src="diktat.js"></script>
-    <script src="settings.js"></script>
+    <script src="script/header.js"></script>
+    <script src="script/diktat.js"></script>
 </html>
