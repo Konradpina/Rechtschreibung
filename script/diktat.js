@@ -197,77 +197,8 @@ function timer(){
 
 
 
-function voicelist(Language){
-    voicelisting=[];
-    var voices =window.speechSynthesis.getVoices()
-    var languagedisplays =document.getElementsByClassName("voicelanguage")
-    var voicecount =document.getElementsByClassName("voicecount")
-    if(Language===1){
-        Language="de-DE"
-        document.getElementById("voicebar").classList.add("animationvoice")
-        exampel="Beispiel"
-        voicelisting=[];
-    }else if(Language===2){
-        Language="en-US"
-        document.getElementById("voicebar").classList.add("animationvoice")
-        exampel="Exampel"
-        voicelisting=[];
-    }else if(Language===3){
-        exampel="ejemplo"
-        Language="es-ES"
-        document.getElementById("voicebar").classList.add("animationvoice")
-        voicelisting=[];
-    }else if(Language===4){
-        exampel="exampel"
-        Language="en-GB"
-        document.getElementById("voicebar").classList.add("animationvoice")
-        voicelisting=[];
-    }else if(Language===5){
-        exampel="exemple"
-        Language="fr-FR"
-        document.getElementById("voicebar").classList.add("animationvoice")
-        voicelisting=[];
-    }
-    var countvoices =0
-    var x =0
-    for(i=0; i<11;i++){
-        voicelisting.shift()
-    }
-    setTimeout(changelang, 500)
-    function changelang(){
-        for(i=0;i<voicecount.length;i++){
-            voicecount[i].hidden=true
-        }
-        for(i=0;i< voices.length;i++){
-            if(voices[i].lang==Language){
-                voicelisting.push(i)
-                languagedisplays[x].innerText=voices[i].name
-                voicecount[x].hidden=false
-                x++
-                countvoices++
-                if(x===10){
-                    return
-                }
-            }
-        }
-        if(countvoices===0){
-            document.getElementById("errorlanguage").hidden=false
-        }else{
-            document.getElementById("errorlanguage").hidden=true
-        }
-    }
-    setTimeout(removeanimaton, 1000)
-    function removeanimaton(){
-        document.getElementById("voicebar").classList.remove("animationvoice")
-    }
 
-}
 
-function voicechange(option){
-    thevoice= voicelisting[option]
-    readexampel(exampel)
-
-}
 
 function readexampel(){
 

@@ -108,7 +108,7 @@
     transition: all 0.3s;
     box-shadow: 0;
     padding: 1% 1%;
-    margin-top:1% ;
+    margin-top:4% ;
     
 }
 .loptions button{
@@ -143,6 +143,7 @@
 }
 
 .loptions{
+    
     min-height: 60vh;
     align-items: center;
     display: grid;
@@ -151,6 +152,7 @@
 }
 
 .ok{
+    margin-top:4% ;
     position: relative;
     bottom: 10px;
     display: flex;
@@ -206,13 +208,13 @@
     }
  
 }
-@media only screen and (max-width:700px){
+@media only screen and (max-width:900px){
     .loptions{
         grid-template-columns: 1fr 1fr;
     }
  
 }
-@media only screen and (max-width:400px){
+@media only screen and (max-width:700px){
     .loptions{
         grid-template-columns: 1fr;
     }
