@@ -12,9 +12,9 @@
     <body>
         <header >
             <div class="logo">Diktat.de</div>
-            <div id="timedisplay" class="headertool">Time</div>
+            <div id="timedisplay" class="headertool"></div>
             <div id="solution" class="headertool" hidden></div>
-            <div id="prozentdisplay" class="headertool">Time</div>
+            <div id="prozentdisplay" class="headertool"></div>
             <div class="more">
                 <div class="line"></div>
                 <div class="line"></div>
@@ -29,7 +29,7 @@
                         <a  onclick="displaysolution()">Lösung</a>
                     </li>
                     <li>
-                        <a href="language.html">Sprache</a>
+                        <a onclick="language()">Sprache</a>
                     </li>
                     <li>
                         <a onclick="hint()">Hineweis</a>
@@ -62,8 +62,64 @@
            
         </div>
         
+
+
+
+        <!-- sprachmenü -->
+        <div  id="languagebox" hidden >
+          
+
+
+            <div class="languagebox">
+                <div id="lmenu" class="lmenu">
+                    <div class="languages">
+                        <button onclick="voicelist(1)">German -De-</button>
+                        <button onclick="voicelist(2)">Englisch -Uk-</button> 
+                        <button onclick="voicelist(3)">Español -Es-</button> 
+                        <button onclick="voicelist(4)">Englisch -Us-</button> 
+                        <button onclick="voicelist(5)">France</button> 
+                        <button onclick="closelanguage()">Back</button> 
+                    
+                    </div>
+                </div>
+            </div>
+
+
+                <div id="pmenu" hidden>
+                    <div  class="languageoptions">
+                        <div id="errorlanguage" class="lerro">Sorry your browser doesn't support this language &#128530</div>
+                        <div class="loptions">
+                            <button class="lbtn active" onclick="voicechange(1)" hidden>Deutsch</button>
+                            <button class="lbtn" onclick="voicechange(2)" hidden>Deut</button>
+                            <button class="lbtn" onclick="voicechange(3)" hidden>Deuastsch</button>
+                            <button class="lbtn" onclick="voicechange(4)" hidden>Deutsch</button>
+                            <button class="lbtn" onclick="voicechange(5)" hidden>Deutsch</button>
+                            <button class="lbtn" onclick="voicechange(6)" hidden>Deutsch</button>
+                            <button class="lbtn" onclick="voicechange(7)" hidden> hiddenDeutsch</button>
+                            <button class="lbtn" onclick="voicechange(8)" hidden>Deutsch</button>
+                            <button class="lbtn" onclick="voicechange(9)" hidden>Deutsch</button>
+                            <button class="lbtn" onclick="voicechange(10)" hidden>Deutsch</button>
+                            <button class="lbtn" onclick="voicechange(11)" hidden>Deutsch</button>
+                            <button class="lbtn" onclick="voicechange(12)" hidden>Deutsch</button>
+                            <button class="lbtn" onclick="voicechange(13)" hidden>Deutsch</button>
+                            <button class="lbtn" onclick="voicechange(14)" hidden>Deutsch</button>
+                            <button class="lbtn" onclick="voicechange(15)" hidden>Deutsch</button>
+                            <button class="lbtn" onclick="voicechange(16)" hidden>Deutsch</button>
+    
+                        
+                        </div>
+                        <div class="ok">
+                            <button onclick="closelanguage()">Ok</button>
+                            <button onclick="back()">Back</button>
+                        </div>
+                    </div>
+                   
+                </div> 
+            
+         </div>
         
     </body>
     <script src="script/header.js"></script>
     <script src="script/diktat.js"></script>
+    <script src="script/language.js"></script>
 </html>
