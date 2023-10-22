@@ -3,6 +3,7 @@
         <title>Diktat</title>
         <link rel="stylesheet" href="style/Header.css">
         <link rel="stylesheet" href="style/Input.css">
+        <link rel="stylesheet" href="style/test.css">
 
         <!-- font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,6 +51,7 @@
                 
                 <div class="Input"><textarea name="" id="textarea" cols="30" rows="10"></textarea>
                 <div class="ct">Enter your Text</div>
+                <div class="flexbox">Test your Self <input type="checkbox" name="vtest" id="vtest"></div>
                 <div class="ct"> <button  onclick="start(1)">Start</button></div>
                 
                 </div>
@@ -58,12 +60,27 @@
         
 
         <div class="diktatbox" id="diktatbox" hidden>
-            <div class="text" ><div class="textdisplay" id="textdisplay"></div><input type="text" class="textinput" id="diktatinput" onkeyup="checkword()"></div>
+            <div class="text" ><div class="textdisplay" id="textdisplay"></div><input type="text" class="textinput" id="diktatinput" onkeyup="checkword(event)"></div>
+           
+        </div>
+
+        <div class="testbox" id="testbox" hidden>
+            <textarea name="100" class="testinput" id="testinput" onkeyup="checktest()"></textarea>
            
         </div>
         
+        <div class="corectbtn" id="corectbtn" hidden>
+             <button onclick="startcorrection()">Correction</button>
+        </div>
 
-
+        <div class="Correctionbox" id="Correctionbox" hidden>
+            <div class="crsats">
+                <div class="cr font" id="cr">&nbsp</div>
+                <div class="cw font" id="cw">&nbsp</div>
+                <div class="cn font" id="cn">&nbsp</div>
+            </div>
+            <div class="crinput"><input type="text" class="font" id="crinput" onkeyup="crcheck()"></div>
+        </div>
 
         <!-- sprachmenü -->
         <div  id="languagebox" hidden >
@@ -118,7 +135,11 @@
             
          </div>
         
+
+         <audio src="mp3/sound.mp3" loop autoplay id="audio"></audio>
     </body>
+
+    <script src="script/test.js"></script>
     <script src="script/header.js"></script>
     <script src="script/diktat.js"></script>
     <script src="script/language.js"></script>

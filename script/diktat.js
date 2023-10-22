@@ -7,22 +7,39 @@ var wrongpoints=0
 var solution=""
 var voicelisting=[]
 var exampel="Exampel"
+document.onkeydown= function(){
+    document.getElementById("diktatinput").focus()
+}
+
+
+function focust(){
+    document.getElementById("diktatinput").focus()
+}
 
 function start(option){
     nothing= testfornothing()
     if(nothing===true){
         return
     }
+   
     var textin =document.getElementById("textarea").value.replace(/(\r\n|\n|\r)/gm, " ").split(" ")
     inputtext =removespace(textin);
     // splittext = split(option)
-
+    if (document.getElementById("vtest").checked){
+        document.getElementById("inputbox").hidden=true
+        document.getElementById("testbox").hidden=false
+        starttest()
+        return
+    }
+    
     document.getElementById("inputbox").hidden=true
     document.getElementById("diktatbox").hidden=false
+
+
     Version = option
     readoutlout()
     time("start")
-    document.getElementById("diktatinput").focus()
+    // focust()
 }
 
 // function split(option){
@@ -53,7 +70,16 @@ function removespace(textin){
     return textin
 }
 
-function checkword(){
+function checkword(event){
+    
+    if(event.key==="F2"){
+        hint()
+        return
+    }else if(event.key==="F1"){
+        displaysolution()
+        return
+    }
+
     var textdisplay =document.getElementById("textdisplay").innerText
     var input =document.getElementById("diktatinput").value;
 
@@ -115,12 +141,21 @@ function checkword(){
 function readoutlout(){
     var textwirdgelesen = inputtext[part];
     textwirdgelesen = textwirdgelesen.replace(".","punkt")
-    textwirdgelesen = textwirdgelesen.replace(",","kommar")
+    textwirdgelesen = textwirdgelesen.replace(",","komma")
     textwirdgelesen = textwirdgelesen.replace("?","fragezeichen")
     textwirdgelesen = textwirdgelesen.replace("!","ausrufezeichen")
     textwirdgelesen = textwirdgelesen.replace("(","klammer auf")
     textwirdgelesen = textwirdgelesen.replace(")","klammer zu")
     textwirdgelesen = textwirdgelesen.replace(":"," doppel punkt")
+    textwirdgelesen = textwirdgelesen.replace("-"," Bindestrich")
+    textwirdgelesen = textwirdgelesen.replace(".","punkt")
+    textwirdgelesen = textwirdgelesen.replace(",","komma")
+    textwirdgelesen = textwirdgelesen.replace("?","fragezeichen")
+    textwirdgelesen = textwirdgelesen.replace("!","ausrufezeichen")
+    textwirdgelesen = textwirdgelesen.replace("(","klammer auf")
+    textwirdgelesen = textwirdgelesen.replace(")","klammer zu")
+    textwirdgelesen = textwirdgelesen.replace(":"," doppel punkt")
+    textwirdgelesen = textwirdgelesen.replace("-"," Bindestrich")
 
     var msg = new SpeechSynthesisUtterance();
     var voices = window.speechSynthesis.getVoices();
@@ -132,7 +167,7 @@ function readoutlout(){
 function displaysolution(){
     document.getElementById("solution").innerText=solution
     document.getElementById("solution").hidden=false
-    changeh()
+    closeh();
     document.getElementById("diktatinput").focus()
 }
 
@@ -160,9 +195,11 @@ function hint(){
     var diktatbox = document.getElementById("diktatbox")
     document.getElementById("solution").innerText= wrongletters()
     document.getElementById("solution").hidden=false
-    changeh()
+    closeh()
     document.getElementById("diktatinput").focus()
 }
+
+
 
 function schowprozent(atword, allword){
     var prozent = Math.round(atword*100/(allword))
@@ -208,3 +245,5 @@ function readexampel(){
     msg.text = exampel
     speechSynthesis.speak(msg);
 }
+
+document.getElementById("audio").volume=0.001/100

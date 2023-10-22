@@ -87,7 +87,7 @@ function voicechange(option){
         activlist[i].classList.remove("active")
     }
     activlist[option-1].classList.add("active")
-    thevoice= voicelisting[option]
+    thevoice= voicelisting[option-1]
     readexampel(exampel)
 
 }
