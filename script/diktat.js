@@ -7,6 +7,9 @@ var wrongpoints=0
 var solution=""
 var voicelisting=[]
 var exampel="Exampel"
+
+var prozenthist=JSON.parse(localStorage.getItem("ProHist"))||[]
+
 document.onkeydown= function(){
     document.getElementById("diktatinput").focus()
 }
@@ -94,6 +97,10 @@ function checkword(event){
                 document.getElementById("diktatinput").value="";
                 alert("the end. You had "+wrongpoints+" Mistakes in "+inputtext.length+" Words. It took you "+houers+" houers "+minutes+" minutes and "+seconds+"seconds"+"your failure rate is "+Math.round(wrongpoints/inputtext.length*100)+"%")
                 schowprozent(inputtext.length,inputtext.length)
+                const d=new Date();
+                prozenthist=[...prozenthist,{Date:`${d.getDate()}.${d.getMonth() +1 }.${d.getFullYear()}`,Pro:`${Math.round(wrongpoints/inputtext.length*100)}`,histtime:`${houers}h ${minutes}m ${seconds}s`,hislength:`${inputtext.length}`}]
+                localStorage.setItem("ProHist",JSON.stringify(prozenthist))
+                console.log(prozenthist)
                 return
             }
             part++
