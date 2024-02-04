@@ -79,7 +79,7 @@ function checkword(event){
         hint()
         return
     }else if(event.key==="F1"){
-        displaysolution()
+        readoutlout()
         return
     }
 
