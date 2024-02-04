@@ -1,5 +1,5 @@
 var inputtext=[]
-var thevoice=0
+var thevoice=2
 var Version
 var diktatinput = document.getElementById("diktatinput")
 var part=0
