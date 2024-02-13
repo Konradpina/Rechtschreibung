@@ -25,7 +25,7 @@ function start(option){
         return
     }
    
-    var textin =document.getElementById("textarea").value.replace(/(\r\n|\n|\r)/gm, " ").split(" ")
+    var textin =document.getElementById("textarea").value.replace(/[„“]/g, '"').replace(/(\r\n|\n|\r)/gm, " ").split(" ")
     inputtext =removespace(textin);
     // splittext = split(option)
     if (document.getElementById("vtest").checked){
