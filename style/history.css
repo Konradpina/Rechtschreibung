@@ -1,29 +1,36 @@
 .historybox{
     position: absolute;
-    top:0;
-    left: 0;
-    right: 0;
-    min-height: 100vh;
+    top:10vh;
+    left: 0vw;
+    right: 0vw;
+    min-height: 90vh;
     background-color: rgb(255, 255, 255);
     
     justify-content: center;
 }
 .historybox div{
     justify-content: center;
-    margin: 1vh;
+    margin: 2vh;
     font-size: 5vh;
     text-align: center;
-    box-shadow: 3px 3px 10px black;
+    box-shadow: 1vw 1vw 2vw black;
 }
 .historybox button{
     font-size: 5vh;
-    background-color: aqua;
-    border: black solid 1px;
+    color:  var(--hcolor);
+    background-color:rgb(255, 255, 255);
+    border:  var(--hcolor) 3px solid;
     border-radius: 5px;
-    width: 90vw;
+    width: 30vw;
     margin: 5vh;
-    transition: all 0.2s;
+    margin-left: 33vw;
+    transition: all 0.5s;
+    box-shadow: 1vw 1vw 2vw black;
 }
 .historybox button:hover{
-    background-color: rgb(77, 13, 13);
+    background-color:  var(--hcolor);
+    color: white;
+    font-size: 5vh;
+    width: 90vw;
+    margin-left: 3vh;
 }
