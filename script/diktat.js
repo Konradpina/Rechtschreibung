@@ -7,6 +7,7 @@ var wrongpoints=0
 var solution=""
 var voicelisting=[]
 var exampel="Exampel"
+var timepassed=6;
 
 var prozenthist=JSON.parse(localStorage.getItem("ProHist"))||[]
 
@@ -147,6 +148,13 @@ function checkword(event){
 
 function readoutlout(){
     var textwirdgelesen = inputtext[part];
+    if(timepassed>3){
+        var textwirdgelesen = `${inputtext[part]} ${inputtext[part+1]}`;
+    }else{
+        var textwirdgelesen = `${inputtext[part+1]}`;
+    }
+    timepassed=0
+
     textwirdgelesen = textwirdgelesen.replace(".","punkt")
     textwirdgelesen = textwirdgelesen.replace(",","komma")
     textwirdgelesen = textwirdgelesen.replace("?","fragezeichen")
@@ -226,6 +234,7 @@ var minutes=0
 var houers=0
 function timer(){
     seconds++
+    timepassed++
     if(seconds===60){
         seconds=0
         minutes++
@@ -245,7 +254,6 @@ function timer(){
 
 
 function readexampel(){
-
     var msg = new SpeechSynthesisUtterance();
     var voices = window.speechSynthesis.getVoices();
     msg.voice = voices[thevoice];
