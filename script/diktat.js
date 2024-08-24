@@ -80,12 +80,13 @@ function checkword(event){
         hint()
         return
     }else if(event.key==="F1"){
+        timepassed= 6
         readoutlout()
         return
     }
 
     var textdisplay =document.getElementById("textdisplay").innerText
-    var input =document.getElementById("diktatinput").value;
+    var input =document.getElementById("diktatinput").value; 
 
     document.getElementById("solution").hidden=true
     if(Version ===1){
@@ -110,6 +111,9 @@ function checkword(event){
             schowprozent(part,inputtext.length)
             return
         }else if(input.search(" ")!= -1){
+            if(document.getElementById("annoy").checked){
+             document.getElementById("wrongsound").play()
+            }
             for(i=0;i<document.getElementById("diktatinput").value.split("").length;i++){
                 document.getElementById("diktatinput").value =document.getElementById("diktatinput").value.replace(" ","");
             }
